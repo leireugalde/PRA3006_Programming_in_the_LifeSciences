@@ -8,7 +8,7 @@ This repository looks into the programming of a website which integrates SPARQL 
 
 ## Files 
 - `LICENSE.md` (to be completed)
-- html file (to be completed)
+- `WEBSITE.html` file (to be completed)
 - To be added and described in the following weeks
 
 # Methodology 
