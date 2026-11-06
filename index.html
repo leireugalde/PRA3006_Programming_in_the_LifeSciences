@@ -4,15 +4,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Caffeine as a Medicine</title>
 </head>
-  <style>
-  body { max-width: 800px; margin: 0 auto; padding: 16px; font-family: Georgia, serif; line-height: 1.6; }
-  table { border-collapse: collapse; width: 100%; }
-  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-  pre { background: #f4f4f4; padding: 12px; overflow-x: auto; }
-</style>
 <body>
   <h1>Caffeine as a Medicine: Can caffeine support or oppose the effects of specific medical treatments?</h1>
   <p>Which diseases are treated with medicine that act on the same receptors as coffee? Do these medicines work in the same (agonist) or opposite way (antagonist)?</p>
+  <script>
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));     // un-highlight all tabs
+      panels.forEach(p => p.classList.remove('active'));   // hide all panels
+      tab.classList.add('active');                          // highlight the clicked tab
+      document.getElementById(tab.dataset.tab).classList.add('active'); // show its panel
+    });
+  });
+</script>
 </body>
 </html>
 
@@ -20,3 +27,20 @@
   <h2>1. Introduction</h2>
   <p>Caffeine is the most widely consumed, not only present in coffee but also in tea, energy drinks or even as a supplement in exercise. Consumed by xx% of the population daily (source), it is important to remember that caffeine acts like a drug, targetting specific receptors. It is possible that there is an overlap between the caffeine-targetted receptors, and those targetted by treatment (medicine) of different diseases. This leads us to assume that caffeine could potentially have an impact on the effectivity of the medicine, either acting as a an enhancer (agonist) or opposer (antagonist). Knowing how coffee could affect these treatments, could allow doctors to recommend certain lifestyle and dietary habits. (ADD MORE ABOUT SCIENTIFIC BACKGROUND)</p>
 </section>
+
+<div class="tabs">
+  <button class="tab active" data-tab="home">Home</button>
+  <button class="tab" data-tab="method">Method</button>
+  <button class="tab" data-tab="results">Results</button>
+  <button class="tab" data-tab="discussion">Discussion</button>
+</div>
+
+<section id="home" class="panel active">  ...intro...  </section>
+<section id="method" class="panel">       ...queries... </section>
+<section id="results" class="panel">      ...tables...  </section>
+<section id="discussion" class="panel">   ...discussion... </section>
+
+.panel { display: none; }
+.panel.active { display: block; }
+.tab { padding: 8px 16px; border: none; background: #f3ece4; cursor: pointer; border-radius: 6px 6px 0 0; }
+.tab.active { background: #7a4a2a; color: white; }
