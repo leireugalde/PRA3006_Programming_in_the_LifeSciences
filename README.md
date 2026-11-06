@@ -4,13 +4,11 @@ This repository looks into the programming of a website which integrates SPARQL 
 
 **Which diseases are treated with medicine that act on the same receptors as coffee? Do these medicines work in the same (agonist) or opposite way (antagonist)?**
 
-Why it’s interesting: almost everyone consumes caffeine daily, but it’s also a real drug that acts on specific proteins in the body.
-
-**Relevance:** Coffee, with caffeine as its main compounds, is one of the most common beverages, consumed by xx% of the population daily (source). Nevertheless it is important to rembember, that coffee is also a real drug, targetting specific receptors. It is possible that there is an overlap between the caffeine-targetted receptors, and those targetted by treatment (medicine) of different diseases. This leads us to assume that caffeine could potentially have an impact on the effectivity of the medicine, either acting as a an enhancer (agonist) or opposer (antagonist). Knowing how coffee could affect these treatments, could allow doctors to recommend certain lifestyle and dietary habits. (ADD MORE ABOUT SCIENTIFIC BACKGROUND)
+**Relevance:** Caffeine is the most widely consumed, not only present in coffee but also in tea, energy drinks or even as a supplement in exercise. Consumed by 80-90% of the US population daily (https://doi.org/10.1097/MOL.0b013e3280127b04), caffeine becomes a recurring metabolite in our systems. Therefore it is important to remember its activity as a drug, targetting specific receptors. These receptors might also be targetted by other drugs intended for medical use. Meaning that there is a possibility for the caffeine and medical drugs to interact with one another. This can sometimes lead to the same or magnifying effects, whereas it might also produce the opposite than intended results.
 
 ## Files 
-- `LICENSE.md` (to be completed)
-- `WEBSITE.html` file (to be completed)
+- `LICENSE.md`
+- `index.html` file (being worked on)
 - To be added and described in the following weeks
 
 # Methodology 
