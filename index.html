@@ -2,11 +2,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Caffeine as Medicine</title>
+  <title>Caffeine Medicine</title>
+
+    <title>Caffeine Medicine</title> /* look at fonts and things used (this is only temporary) */ 
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      max-width: 800px;
+      margin: 0 auto;            /* centres the page */
+      padding: 20px;
+      background-color: white;
+      color: #4a2c1d;            /* brown text */
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #6b3f2a;            /* dark brown */
+      text-align: center;
+      border-bottom: 3px solid #e8743b;   /* orange line under the title */
+      padding-bottom: 10px;
+    }
+
+    h2 {
+      color: #e8743b;            /* orange */
+    }
+
+    b {
+      color: #d6668a;            /* pink sub-titles */
+    }
+
+    section {
+      border-left: 4px solid #f4b6c6;     /* light pink line on the left */
+      padding-left: 15px;
+      margin-bottom: 30px;
+    }
+
+    a {
+      color: #e8743b;
+    }
+  </style>
+</head>
+
 </head>
 <body>
-  <h1>Caffeine as a Medicine: Can caffeine support or oppose the effects of specific medical treatments?</h1>
-  <p>Which diseases are treated with medicine that act on the same receptors as coffee? Do these medicines work in the same (agonist) or opposite way (antagonist)?</p>
+  <h1>Caffeine as Medicine: can caffeine support or oppose the effects of medical treatments?</h1>
+  <p>Which diseases are treated with medicines that act on the same receptors as caffeine, and do these medicines work in the same or the opposite way to caffeine?</p>
   <script>
   const tabs = document.querySelectorAll('.tab');
   const panels = document.querySelectorAll('.panel');
@@ -20,22 +62,37 @@
     });
   });
 </script>
-</body>
-</html>
 
 <section id="introduction">
-  <h2>1. Introduction</h2>
-  <p>Caffeine is the most widely consumed, not only present in coffee but also in tea, energy drinks or even as a supplement in exercise. Consumed by xx% of the population daily (source), it is important to remember that caffeine acts like a drug, targetting specific receptors. It is possible that there is an overlap between the caffeine-targetted receptors, and those targetted by treatment (medicine) of different diseases. This leads us to assume that caffeine could potentially have an impact on the effectivity of the medicine, either acting as a an enhancer (agonist) or opposer (antagonist). Knowing how coffee could affect these treatments, could allow doctors to recommend certain lifestyle and dietary habits. (ADD MORE ABOUT SCIENTIFIC BACKGROUND)</p>
+  <h2>1. Introduction and Scientific Background</h2>
+  <b>Why does this matter?</b>
+  <p>Caffeine is the most widely consumed, not only present in coffee but also in tea, energy drinks or even as a supplement in exercise. 
+    Consumed by 80-90% of the US population daily (https://doi.org/10.1097/MOL.0b013e3280127b04), caffeine becomes a recurring metabolite in our systems. 
+    Therefore it is important to remember its activity as a drug, targetting specific receptors. These receptors might also be targetted by other drugs intended for medical use. 
+    Meaning that there is a possibility for the caffeine and medical drugs to interact with one another. This can sometimes lead to the same or magnifying effects, whereas it might 
+    also produce the opposite than intended results.</p>
+
+  <b>What is caffeine, more on the science?</b>
+  <p>Caffeine, derived from plants, it is one of the most common biological stimulants. It belongs to the methylxanthine chemical family, which antagonizes
+    adenosine receptors in the central nervous system. Other active methylxanthines include theophylline, such as in tea. Caffeine is quickly absorbed into the bloodstream, and 
+    travels to the adenosine receptors in the brain. Caffeine mainly acts through the A1 and A2A adenosine receptors in humans, specific proteins which bind the neurotransmitter adenosine. This compound is a 
+    by-product of ATP breakdown, therefore as the day goes on, the adenosine accumulates and binds to the receptors. Signalling tiredness to the body, and the need to bring down the pace.
+    Caffeine has a similar structure to adenosine, **(rewrite)** and binds competitively to the A1 and A2A receptors. Acting as an antagonist, blocking the activation of the receptor, and 
+    increasing alertness. If it were to bind non-competitively, it would bind as an agonist, and the signal would still be activated. The receptors are on the brain, but also
+    the heart, blood vessels and the airways.   </p>
+
+  <p> The stimulant can also bind to ryanonide receptors, found in muscle and heart cells. This causes calcium pumps to allow flux, and for calcium to be released
+      in the cells, causing the cells to contract. These receptors are only bound when having very high concentrations of caffeine, obtained from more than one or 
+      two cups of coffee. </p>
+
+  <b>How can caffeine behavior affect other drugs?</b>
+  <p>Complete this section still. </p>
+
 </section>
 
 <section id="research question">
   <h3>Research question</h3>
   <p> Which diseases are treated with medicine that act on the same receptors as coffee? Do these medicines work in the same (agonist) or opposite way (antagonist)?</p>
-</section>
-
-<section id="scientific background">
-  <h2>Scientific background</h2>
-  <p>Caffeine is the most widely consumed, not only present in coffee but also in tea, energy drinks or even as a supplement in exercise. Consumed by xx% of the population daily (source), it is important to remember that caffeine acts like a drug, targetting specific receptors. It is possible that there is an overlap between the caffeine-targetted receptors, and those targetted by treatment (medicine) of different diseases. This leads us to assume that caffeine could potentially have an impact on the effectivity of the medicine, either acting as a an enhancer (agonist) or opposer (antagonist). Knowing how coffee could affect these treatments, could allow doctors to recommend certain lifestyle and dietary habits. (ADD MORE ABOUT SCIENTIFIC BACKGROUND)</p>
 </section>
 
 <section id="approach">
@@ -54,12 +111,8 @@
   <button class="tab" data-tab="discussion">Discussion</button>
 </div>
 
-<section id="home" class="panel active">  ...intro...  </section>
-<section id="Caffeine target receptors (Section 1)" class="panel">       ...queries... </section>
-<section id="Other drugs targetting those receptors (Sections 2 and 3)" class="panel">      ...tables...  </section>
-<section id="discussion" class="panel">   ...discussion... </section>
+need to use javascript to make buttons interactive, put them next to the approach section
 
-.panel { display: none; }
-.panel.active { display: block; }
-.tab { padding: 8px 16px; border: none; background: #f3ece4; cursor: pointer; border-radius: 6px 6px 0 0; }
-.tab.active { background: #7a4a2a; color: white; }
+
+</body>
+</html>
