@@ -2,9 +2,11 @@
 
 This repository looks into the programming of a website which integrates SPARQL and JavaScript to pull out scientific data of the following research question: 
 
-**Do caffeine (in coffee) and resveratrol (in red wine) act on the same processes in our cells, and what could that mean for everyday proceeses, such as: energy, sleep and heart heal**
+**Which diseases are treated with medicine that act on the same receptors as coffee? Do these medicines work in the same (agonist) or opposite way (antagonist)?**
 
-**Relevance:** A coffee in the morning, and a glass of wine in the evening, both considered traditional beverages routinely taken every day. Traditionally, these are known to have certain health benefits, both for example aiding in cardiovascular health. Coffee contains caffeine, whereas red wine contains resveratrol. This repository codes for an html file comparing the pathways activated by caffeine and resveratrol, whether they have some overlap and if this is a beneficial or opposing one. Most importantly aiming to answer, what effects does your morning coffee and evening glass of wine have on your cellular, and therefore bodily processes. 
+Why it’s interesting: almost everyone consumes caffeine daily, but it’s also a real drug that acts on specific proteins in the body.
+
+**Relevance:** Coffee, with caffeine as its main compounds, is one of the most common beverages, consumed by xx% of the population daily (source). Nevertheless it is important to rembember, that coffee is also a real drug, targetting specific receptors and proteins. It is possible that there is an overlap between the caffeine-targetted receptors and proteins, and those targetted by treatment (medicine) of different diseases. This leads us to assume that caffeine could potentially have an impact on the effectivity of the medicine, either acting as a an enhancer (agonist) or opposer (antagonist). Knowing how coffee could affect these treatments, could allow doctors to recommend certain lifestyle and dietary habits. (ADD MORE ABOUT SCIENTIFIC BACKGROUND)
 
 ## Files 
 - `LICENSE.md` (to be completed)
