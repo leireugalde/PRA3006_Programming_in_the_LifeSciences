@@ -74,6 +74,33 @@
       .layout { grid-template-columns: 1fr; }
       .side { position: static; order: -1; }
     }
+
+      .molecule {
+      float: right;
+      width: 200px;
+      margin: 0 0 12px 20px;
+      text-align: center;
+    }
+    .molecule img { width: 100%; }
+    .molecule figcaption { font-size: 13px; color: #7a5a4a; }
+
+    @media (max-width: 600px) {
+      .molecule { float: none; margin: 0 auto 12px; }   /* centred on phones */
+    }
+
+    pre {
+      background: #fdf0ec;            /* very light pink */
+      border-left: 4px solid #e8743b; /* orange line */
+      padding: 14px;
+      border-radius: 8px;
+      overflow-x: auto;               /* long lines scroll instead of breaking the layout */
+      font-size: 14px;
+    }
+    code { font-family: Consolas, Menlo, monospace; }
+
+    table { border-collapse: collapse; width: 100%; font-size: 15px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #f1d9d3; }
+    th { background: #fbe3e2; color: #6b3f2a; }
   </style>
 </head>
 
@@ -95,29 +122,40 @@
 
           <b>Why does this matter?</b>
           <p>Caffeine is the most widely consumed psychoactive substance, not only present in coffee but also in tea, energy drinks or even as a supplement in exercise.
-            Consumed by 80-90% of the US population daily (https://doi.org/10.1097/MOL.0b013e3280127b04), caffeine becomes present in most peoples bodies every day.
-            Therefore it is important to remember its activity as a drug, targetting specific receptors. These receptors might also be targetted by other drugs intended for medical use.
-            Meaning that there is a possibility for the caffeine and medical drugs to interact with one another. This can sometimes lead to the same or magnifying effects, whereas it might
+            Consumed by 80-90% of the US population daily (Cornelis & El-Sohemy, 2007), caffeine becomes present in most peoples bodies every day.
+            Therefore it is important to remember its activity as a drug, targeting specific receptors. These receptors might also be targetted by other drugs intended for medical use,
+            meaning that there is a possibility for the caffeine and medical drugs to interact with one another. This can sometimes lead to the same or magnifying effects, whereas it might
             also produce the opposite than intended results.</p>
 
           <b>What is caffeine, more on the science?</b>
+          <figure class="molecule">
+              <img src="caffeine_structure.png" alt="Chemical structure of caffeine (C8H10N4O2)">
+               <figcaption>The caffeine molecule. Image: Wikimedia Commons</figcaption>
+              </figure>
+
           <p>Caffeine, derived from plants, it is one of the most common biological stimulants. It belongs to the methylxanthine chemical family, which antagonizes
             adenosine receptors in the central nervous system. Other active methylxanthines include theophylline, such as in tea. Caffeine is quickly absorbed into the bloodstream, and
-            travels to the adenosine receptors in the brain. Caffeine mainly acts through the A1 and A2A adenosine receptors in humans, specific proteins which bind the neurotransmitter adenosine. This compound is a
-            by-product of ATP breakdown, therefore as the day goes on, the adenosine accumulates and binds to the receptors. Signalling tiredness to the body, and the need to bring down the pace.
+            travels to the adenosine receptors in the brain. </p>
 
-            Caffeine has a similar structure to adenosine, and binds to the same site on the A1 and A2A receptors, without activating them. It therefore acts as an antagonist, which blocks the adenosines'
-            signal, therefore increasing alterness (more on agonists and antagonists can be found below). These receptors are located not only on the brain but also in the heart, blood vessels and airways.</p>
+           <b>What is caffeine, more on the science?</b>
+          <p>Caffeine mainly acts through the A1 and A2A adenosine receptors in humans, specific proteins which bind the neurotransmitter adenosine. This compound is a
+            by-product of ATP breakdown, therefore as the day goes on, the adenosine accumulates and binds to the receptors, signalling tiredness to the body, and the need
+            to bring down the pace. Caffeine has a similar structure to adenosine, and binds to the same site on the A1 and A2A receptors, without activating them. It therefore acts as an antagonist, which blocks the adenosines'
+            signal, therefore increasing alterness (more on agonists and antagonists can be found in "Caffeine behavior affecting other drugs"). These receptors are located not only on the brain but also in the heart, blood vessels and airways.</p>
 
+           <b>Ryanodine receptors: calcium in muscle and heart</b>
           <p>The stimulant can also bind to ryanodine receptors, found in muscle and heart cells. This causes calcium channels to allow flux, releasing calcium into the cell,
             causing the cells to contract. These receptors are only bound when having very high concentrations of caffeine. Concentrations far higher than those reached by drinking coffee. </p>
 
           <b>How can caffeine behavior affect other drugs?</b>
-          <p>Complete this section still.</p>
+          <p>Many people take medicine that act on the same receptors as caffeine. Such a drug can work in the same manner as caffeine (also as an antagonist), or in the opposite way (agonist).
+            In the first case, caffeine could add to the drugs’ effects, whereas in the second one it could reduce it. For example, patients are asked to avoid coffee before an
+            adenosine heart stress test. Adenosine is given as an agonist to activate these receptors, and caffeine would block them.</p>
         </div>
 
         <div class="box">
           <h2>Approach</h2>
+        <p> This research project answers the research question by answering the three following questions. The data and conclusions can be visualized on the tabs on the right. </p>
           <ol type="1">
             <li>What receptors does caffeine target?</li>
             <li>What other drugs act on those receptors and what diseases do they treat?</li>
@@ -125,11 +163,64 @@
           </ol>
         </div>
 
+        <div class="box">
+          <h2>Data and tools</h2>
+          <p>This website (html file) was created on VS code. The data was obtained from Wikidata, a free
+            open knowledge base. SPARQL was the query language, and applied on the Wikidata Query Service. Some mentionable key properties of the project include the PubChem IDs and
+            codes used to focus the research of the queries: </p>
+          <ol type="1">
+            <li>P662: "caffeine"</li>
+            <li>P129: "physically interacts with"</li>
+            <li>P2175: "medical condition treated"</li>
+            <li>P2868: "object has role"</li>
+          </ol>
+        </div>
       </section>
 
       <!-- SECTION 1 TAB -->
+      <!-- SECTION 1 TAB -->
       <section id="section1" class="panel">
-        <div class="box"><h2>Section 1: Which receptors does caffeine target?</h2></div>
+
+        <div class="box">
+          <h2>Section 1: Which receptors does caffeine act on?</h2>
+        </div>
+
+        <div class="box">
+          <p>Before we can determine the interaction between caffeine and other drugs, we need to know which receptors in the body caffeine binds to.
+            The first Wikidata query asks for every receptor interacting with caffeine, given the Wikidata database. The SPARQL query script can be found
+            at the bottom of the page.</p>
+        </div>
+
+        <div class="box">
+          <h3>Results</h3>
+                   <p>Wikidata currently lists <span id="query1-count">…</span> protein items that caffeine interacts with. This table loads live from Wikidata every time the page is opened.</p>
+          <table>
+            <thead>
+              <tr><th>Protein</th><th>Wikidata ID</th></tr>
+            </thead>
+            <tbody id="query1-results">
+              <tr><td colspan="2">Loading data from Wikidata…</td></tr>
+            </tbody>
+          </table>
+          <p>Comments under table</p>
+        <div class="box">
+          <h3>Conclusion</h3>
+          <p>To be done</p>
+        </div>
+
+        <div class="box">
+          <h3>The SPARQL query</h3>
+                  <pre><code id="query1-code">Loading query…</code></pre>
+          <p><a id="query1-link" target="_blank">Click here to run this query on Wikidata (add link) →</a></p>
+
+        <h3>Understanding the SPARQL query</h3>
+          <ul>
+            <li><code>?caffeine wdt:P662 "2519"</code> finds caffeine by its PubChem ID (2519).</li>
+            <li><code>wdt:P129</code> means "physically interacts with". It links caffeine to the proteins it binds to.</li>
+            <li><code>UNION</code> means "or": the link can be stored on caffeine's page or on the protein's page, so both are searched.</li>
+            <li>The <code>SERVICE wikibase:label</code> line turns codes such as Q3062781 into readable English names.</li>
+          </ul>
+        </div>
       </section>
 
       <!-- SECTIONS 2 AND 3 TAB -->
@@ -140,6 +231,11 @@
       <!-- DISCUSSION TAB -->
       <section id="discussion" class="panel">
         <div class="box"><h2>Discussion</h2></div>
+      </section>
+
+      <!-- CITATIONS -->
+      <section id="citations" class="panel">
+        <div class="box"><h2>Citations</h2></div>
       </section>
     </main>
 
@@ -160,6 +256,10 @@
       <button class="tab" data-tab="discussion">
         <span class="tab-title">Discussion</span>
         <span class="tab-text">Conclusions and limitations</span>
+      </button>
+      <button class="tab" data-tab="citations">
+        <span class="tab-title">Citations</span>
+        <span class="tab-text">Resources used</span>
       </button>
     </nav>
 

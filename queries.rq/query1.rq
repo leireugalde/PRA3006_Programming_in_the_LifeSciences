@@ -1,0 +1,7 @@
+SELECT DISTINCT ?protein ?proteinLabel WHERE {
+  ?caffeine wdt:P662 "2519" .
+  { ?caffeine wdt:P129 ?protein . }
+  UNION
+  { ?protein wdt:P129 ?caffeine . }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
