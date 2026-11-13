@@ -1,118 +1,183 @@
+
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Caffeine Medicine</title>
 
-    <title>Caffeine Medicine</title> /* look at fonts and things used (this is only temporary) */ 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-  <style> have to redo this section
+    <title>Caffeine Medicine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+    /* coloured background: brown → orange → pink */
     body {
-      max-width: 800px;
-      margin: 0 auto;            /* centres the page */
-      padding: 20px;
-      background-color: white;
-      color: #4a2c1d;            /* brown text */
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      margin: 0;
+      padding: 30px 16px;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #6b3f2a 0%, #e8743b 55%, #f4b6c6 100%);
+      background-attachment: fixed;
+      color: #4a2c1d;
+      font-family: "Nunito", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
     }
 
-    h1 {
-      color: #6b3f2a;            /* dark brown */
-      text-align: center;
-      border-bottom: 3px solid #e8743b;   /* orange line under the title */
-      padding-bottom: 10px;
+    h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; color: #6b3f2a; }
+    h1 { text-align: center; }
+    h2 { color: #e8743b; }
+    b  { color: #d6668a; display: block; margin-top: 16px; }
+    a  { color: #e8743b; }
+
+    /* two columns: text on the left, tab boxes on the right */
+    .layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 24px;
+      align-items: start;
     }
 
-    h2 {
-      color: #e8743b;            /* orange */
+    /* white boxes for the text */
+    .box {
+      background: white;
+      border-radius: 14px;
+      padding: 20px 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     }
 
-    b {
-      color: #d6668a;            /* pink sub-titles */
+    /* clickable tab boxes */
+    .side { position: sticky; top: 20px; display: flex; flex-direction: column; gap: 14px; }
+    .tab {
+      text-align: left;
+      background: white;
+      border: 3px solid transparent;
+      border-radius: 14px;
+      padding: 18px;
+      cursor: pointer;
+      font-family: inherit;
+      color: #4a2c1d;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     }
+    .tab-title { display: block; font-family: "Playfair Display", serif; font-size: 22px; color: #6b3f2a; }
+    .tab-text  { display: block; font-size: 14px; margin-top: 4px; }
+    .tab:hover { border-color: #f4b6c6; }
+    .tab.active { background: #e8743b; }
+    .tab.active .tab-title, .tab.active .tab-text { color: white; }
 
-    section {
-      border-left: 4px solid #f4b6c6;     /* light pink line on the left */
-      padding-left: 15px;
-      margin-bottom: 30px;
-    }
+    /* only the open tab's content is visible */
+    .panel { display: none; }
+    .panel.active { display: block; }
 
-    a {
-      color: #e8743b;
+    /* phones: tab boxes go above the text */
+    @media (max-width: 800px) {
+      .layout { grid-template-columns: 1fr; }
+      .side { position: static; order: -1; }
     }
   </style>
 </head>
 
-</head>
 <body>
-  <h1>Caffeine as Medicine: can caffeine support or oppose the effects of medical treatments?</h1>
-  <p>Which diseases are treated with medicines that act on the same receptors as caffeine, and do these medicines work in the same or the opposite way to caffeine?</p>
+  <div class="layout">
+
+    <main>
+      <!-- HOME TAB -->
+      <!-- HOME TAB -->
+      <section id="home" class="panel active">
+
+        <div class="box">
+          <h1>Caffeine as Medicine: can caffeine support or oppose the effects of medical treatments?</h1>
+          <p>Which diseases are treated with medicines that act on the same receptors as caffeine, and do these medicines work in the same or the opposite way to caffeine?</p>
+        </div>
+
+        <div class="box">
+          <h2>1. Introduction and Scientific Background</h2>
+
+          <b>Why does this matter?</b>
+          <p>Caffeine is the most widely consumed psychoactive substance, not only present in coffee but also in tea, energy drinks or even as a supplement in exercise.
+            Consumed by 80-90% of the US population daily (https://doi.org/10.1097/MOL.0b013e3280127b04), caffeine becomes present in most peoples bodies every day.
+            Therefore it is important to remember its activity as a drug, targetting specific receptors. These receptors might also be targetted by other drugs intended for medical use.
+            Meaning that there is a possibility for the caffeine and medical drugs to interact with one another. This can sometimes lead to the same or magnifying effects, whereas it might
+            also produce the opposite than intended results.</p>
+
+          <b>What is caffeine, more on the science?</b>
+          <p>Caffeine, derived from plants, it is one of the most common biological stimulants. It belongs to the methylxanthine chemical family, which antagonizes
+            adenosine receptors in the central nervous system. Other active methylxanthines include theophylline, such as in tea. Caffeine is quickly absorbed into the bloodstream, and
+            travels to the adenosine receptors in the brain. Caffeine mainly acts through the A1 and A2A adenosine receptors in humans, specific proteins which bind the neurotransmitter adenosine. This compound is a
+            by-product of ATP breakdown, therefore as the day goes on, the adenosine accumulates and binds to the receptors. Signalling tiredness to the body, and the need to bring down the pace.
+
+            Caffeine has a similar structure to adenosine, and binds to the same site on the A1 and A2A receptors, without activating them. It therefore acts as an antagonist, which blocks the adenosines'
+            signal, therefore increasing alterness (more on agonists and antagonists can be found below). These receptors are located not only on the brain but also in the heart, blood vessels and airways.</p>
+
+          <p>The stimulant can also bind to ryanodine receptors, found in muscle and heart cells. This causes calcium channels to allow flux, releasing calcium into the cell,
+            causing the cells to contract. These receptors are only bound when having very high concentrations of caffeine. Concentrations far higher than those reached by drinking coffee. </p>
+
+          <b>How can caffeine behavior affect other drugs?</b>
+          <p>Complete this section still.</p>
+        </div>
+
+        <div class="box">
+          <h2>Approach</h2>
+          <ol type="1">
+            <li>What receptors does caffeine target?</li>
+            <li>What other drugs act on those receptors and what diseases do they treat?</li>
+            <li>Does each drug work in the same or opposite way as caffeine?</li>
+          </ol>
+        </div>
+
+      </section>
+
+      <!-- SECTION 1 TAB -->
+      <section id="section1" class="panel">
+        <div class="box"><h2>Section 1: Which receptors does caffeine target?</h2></div>
+      </section>
+
+      <!-- SECTIONS 2 AND 3 TAB -->
+      <section id="section23" class="panel">
+        <div class="box"><h2>Sections 2 &amp; 3: Other drugs, and same or opposite?</h2></div>
+      </section>
+
+      <!-- DISCUSSION TAB -->
+      <section id="discussion" class="panel">
+        <div class="box"><h2>Discussion</h2></div>
+      </section>
+    </main>
+
+    <!-- TAB BOXES: next to the text (this replaces your lines 107–112) -->
+    <nav class="side">
+      <button class="tab active" data-tab="home">
+        <span class="tab-title">Home</span>
+        <span class="tab-text">Introduction and approach</span>
+      </button>
+      <button class="tab" data-tab="section1">
+        <span class="tab-title">Section 1</span>
+        <span class="tab-text">Approach 1: Which receptors does caffeine target?</span>
+      </button>
+      <button class="tab" data-tab="section23">
+        <span class="tab-title">Sections 2 &amp; 3</span>
+        <span class="tab-text">Approaches 2 &amp; 3: Other drugs, and same or opposite?</span>
+      </button>
+      <button class="tab" data-tab="discussion">
+        <span class="tab-title">Discussion</span>
+        <span class="tab-text">Conclusions and limitations</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- SCRIPT: replaces your lines 52–64, and must be last, just before </body> -->
   <script>
-  const tabs = document.querySelectorAll('.tab');
-  const panels = document.querySelectorAll('.panel');
+    const tabs = document.querySelectorAll('.tab');
+    const panels = document.querySelectorAll('.panel');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));     // un-highlight all tabs
-      panels.forEach(p => p.classList.remove('active'));   // hide all panels
-      tab.classList.add('active');                          // highlight the clicked tab
-      document.getElementById(tab.dataset.tab).classList.add('active'); // show its panel
+    function showTab(id) {
+      tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === id));
+      panels.forEach(p => p.classList.toggle('active', p.id === id));
+      window.scrollTo(0, 0);
+    }
+
+    document.querySelectorAll('[data-tab]').forEach(button => {
+      button.addEventListener('click', () => showTab(button.dataset.tab));
     });
-  });
-</script>
-
-<section id="introduction">
-  <h2>1. Introduction and Scientific Background</h2>
-  <b>Why does this matter?</b>
-  <p>Caffeine is the most widely consumed, not only present in coffee but also in tea, energy drinks or even as a supplement in exercise. 
-    Consumed by 80-90% of the US population daily (https://doi.org/10.1097/MOL.0b013e3280127b04), caffeine becomes a recurring metabolite in our systems. 
-    Therefore it is important to remember its activity as a drug, targetting specific receptors. These receptors might also be targetted by other drugs intended for medical use. 
-    Meaning that there is a possibility for the caffeine and medical drugs to interact with one another. This can sometimes lead to the same or magnifying effects, whereas it might 
-    also produce the opposite than intended results.</p>
-
-  <b>What is caffeine, more on the science?</b>
-  <p>Caffeine, derived from plants, it is one of the most common biological stimulants. It belongs to the methylxanthine chemical family, which antagonizes
-    adenosine receptors in the central nervous system. Other active methylxanthines include theophylline, such as in tea. Caffeine is quickly absorbed into the bloodstream, and 
-    travels to the adenosine receptors in the brain. Caffeine mainly acts through the A1 and A2A adenosine receptors in humans, specific proteins which bind the neurotransmitter adenosine. This compound is a 
-    by-product of ATP breakdown, therefore as the day goes on, the adenosine accumulates and binds to the receptors. Signalling tiredness to the body, and the need to bring down the pace.
-    Caffeine has a similar structure to adenosine, **(rewrite)** and binds competitively to the A1 and A2A receptors. Acting as an antagonist, blocking the activation of the receptor, and 
-    increasing alertness. If it were to bind non-competitively, it would bind as an agonist, and the signal would still be activated. The receptors are on the brain, but also
-    the heart, blood vessels and the airways.   </p>
-
-  <p> The stimulant can also bind to ryanonide receptors, found in muscle and heart cells. This causes calcium pumps to allow flux, and for calcium to be released
-      in the cells, causing the cells to contract. These receptors are only bound when having very high concentrations of caffeine, obtained from more than one or 
-      two cups of coffee. </p>
-
-  <b>How can caffeine behavior affect other drugs?</b>
-  <p>Complete this section still. </p>
-
-</section>
-
-<section id="research question">
-  <h3>Research question</h3>
-  <p> Which diseases are treated with medicine that act on the same receptors as coffee? Do these medicines work in the same (agonist) or opposite way (antagonist)?</p>
-</section>
-
-<section id="approach">
-  <h2>Approach</h2>
-  <ol type="1">
-  <li>What receptors does caffeine target?</li>
-  <li>What other drugs act on those receptors and what diseases do they treat?</li>
-  <li>Does each drug work in the same or opposite way as caffeine?</li>
-</ol>
-</section>
-
-<div class="tabs">
-  <button class="tab active" data-tab="home">Home</button>
-  <button class="tab" data-tab="Caffeine target receptors (Section 1)">Section 1</button>
-  <button class="tab" data-tab="Other drugs targetting those receptors (Sections 2 and 3)">Sections 2 and 3</button>
-  <button class="tab" data-tab="discussion">Discussion</button>
-</div>
-
-need to use javascript to make buttons interactive, put them next to the approach section
-
-
+  </script>
 </body>
-</html>
