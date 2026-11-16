@@ -118,6 +118,11 @@
         </div>
 
         <div class="box">
+          <h2>Message: I confused the github and html link, here is the link to the repository</h2>
+          <p>https://github.com/leireugalde/PRA3006_Programming_in_the_LifeSciences.git</p>
+        </div>
+
+        <div class="box">
           <h2>1. Introduction and Scientific Background</h2>
 
           <b>Why does this matter?</b>
@@ -203,6 +208,7 @@
             </tbody>
           </table>
           <p>Comments under table</p>
+        </div>
         <div class="box">
           <h3>Conclusion</h3>
           <p>To be done</p>
@@ -211,7 +217,7 @@
         <div class="box">
           <h3>The SPARQL query</h3>
                   <pre><code id="query1-code">Loading query…</code></pre>
-          <p><a id="query1-link" target="_blank">Click here to run this query on Wikidata (add link) →</a></p>
+          <p><a id="query1-link" target="_blank">Click here to run this query on Wikidata →</a></p>
 
         <h3>Understanding the SPARQL query</h3>
           <ul>
@@ -279,5 +285,73 @@
     document.querySelectorAll('[data-tab]').forEach(button => {
       button.addEventListener('click', () => showTab(button.dataset.tab));
     });
+
+    // ---------- Live data from Wikidata ----------
+
+    // Load a query file and return its text
+    async function loadQuery(path) {
+      const response = await fetch(path);
+      if (!response.ok) {
+        throw new Error('Could not find the file ' + path + ' (status ' + response.status + ')');
+      }
+      return await response.text();
+    }
+
+    // Send a query to Wikidata and return the result rows
+    async function runQuery(query) {
+      const url = 'https://query.wikidata.org/sparql?format=json&query=' + encodeURIComponent(query);
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Wikidata returned an error (status ' + response.status + ')');
+      }
+      const data = await response.json();
+      return data.results.bindings;
+    }
+
+    // Query 1: show the query, make the link, fill the table
+    async function showQuery1() {
+      const query = await loadQuery('queries/query1.rq');
+
+      document.getElementById('query1-code').textContent = query;
+      document.getElementById('query1-link').href =
+        'https://query.wikidata.org/#' + encodeURIComponent(query);
+
+      const rows = await runQuery(query);
+      const table = document.getElementById('query1-results');
+      table.innerHTML = '';
+      document.getElementById('query1-count').textContent = rows.length;
+
+      rows.forEach(row => {
+        const link = row.protein.value;
+        const tr = document.createElement('tr');
+
+        const nameCell = document.createElement('td');
+        const a = document.createElement('a');
+        a.href = link;
+        a.target = '_blank';
+        a.textContent = row.proteinLabel.value;
+        nameCell.appendChild(a);
+
+        const idCell = document.createElement('td');
+        idCell.textContent = link.split('/').pop();
+
+        tr.appendChild(nameCell);
+        tr.appendChild(idCell);
+        table.appendChild(tr);
+      });
+    }
+
+    showQuery1().catch(error => {
+      console.error(error);
+      const cell = document.createElement('td');
+      cell.colSpan = 2;
+      cell.textContent = 'Could not load the data: ' + error.message;
+      const table = document.getElementById('query1-results');
+      table.innerHTML = '';
+      const tr = document.createElement('tr');
+      tr.appendChild(cell);
+      table.appendChild(tr);
+    });
   </script>
 </body>
+</html>
