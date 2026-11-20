@@ -4,104 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Caffeine Medicine</title>
+  <title>Caffeine Medicine</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-    /* coloured background: brown → orange → pink */
-    body {
-      margin: 0;
-      padding: 30px 16px;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #6b3f2a 0%, #e8743b 55%, #f4b6c6 100%);
-      background-attachment: fixed;
-      color: #4a2c1d;
-      font-family: "Nunito", Arial, sans-serif;
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; color: #6b3f2a; }
-    h1 { text-align: center; }
-    h2 { color: #e8743b; }
-    b  { color: #d6668a; display: block; margin-top: 16px; }
-    a  { color: #e8743b; }
-
-    /* two columns: text on the left, tab boxes on the right */
-    .layout {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 280px;
-      gap: 24px;
-      align-items: start;
-    }
-
-    /* white boxes for the text */
-    .box {
-      background: white;
-      border-radius: 14px;
-      padding: 20px 28px;
-      margin-bottom: 20px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-    }
-
-    /* clickable tab boxes */
-    .side { position: sticky; top: 20px; display: flex; flex-direction: column; gap: 14px; }
-    .tab {
-      text-align: left;
-      background: white;
-      border: 3px solid transparent;
-      border-radius: 14px;
-      padding: 18px;
-      cursor: pointer;
-      font-family: inherit;
-      color: #4a2c1d;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-    }
-    .tab-title { display: block; font-family: "Playfair Display", serif; font-size: 22px; color: #6b3f2a; }
-    .tab-text  { display: block; font-size: 14px; margin-top: 4px; }
-    .tab:hover { border-color: #f4b6c6; }
-    .tab.active { background: #e8743b; }
-    .tab.active .tab-title, .tab.active .tab-text { color: white; }
-
-    /* only the open tab's content is visible */
-    .panel { display: none; }
-    .panel.active { display: block; }
-
-    /* phones: tab boxes go above the text */
-    @media (max-width: 800px) {
-      .layout { grid-template-columns: 1fr; }
-      .side { position: static; order: -1; }
-    }
-
-      .molecule {
-      float: right;
-      width: 200px;
-      margin: 0 0 12px 20px;
-      text-align: center;
-    }
-    .molecule img { width: 100%; }
-    .molecule figcaption { font-size: 13px; color: #7a5a4a; }
-
-    @media (max-width: 600px) {
-      .molecule { float: none; margin: 0 auto 12px; }   /* centred on phones */
-    }
-
-    pre {
-      background: #fdf0ec;            /* very light pink */
-      border-left: 4px solid #e8743b; /* orange line */
-      padding: 14px;
-      border-radius: 8px;
-      overflow-x: auto;               /* long lines scroll instead of breaking the layout */
-      font-size: 14px;
-    }
-    code { font-family: Consolas, Menlo, monospace; }
-
-    table { border-collapse: collapse; width: 100%; font-size: 15px; }
-    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #f1d9d3; }
-    th { background: #fbe3e2; color: #6b3f2a; }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -114,13 +19,7 @@
 
         <div class="box">
           <h1>Caffeine as Medicine: can caffeine support or oppose the effects of medical treatments?</h1>
-          <p>Which diseases are treated with medicines that act on the same receptors as caffeine, and do these medicines work in the same or the opposite way to caffeine?</p>
-        </div>
-
-        <div class="box">
-          <h2>Message: I confused the github and html link, here is the link to the repository</h2>
-          <p>https://github.com/leireugalde/PRA3006_Programming_in_the_LifeSciences.git</p>
-        </div>
+          <p>Which diseases are treated with medicines that act on the same receptors as caffeine, and do these medicines work in the same or the opposite way to caffeine?</p>        </div>
 
         <div class="box">
           <h2>1. Introduction and Scientific Background</h2>
@@ -182,7 +81,7 @@
         </div>
       </section>
 
-      <!-- SECTION 1 TAB -->
+
       <!-- SECTION 1 TAB -->
       <section id="section1" class="panel">
 
@@ -210,7 +109,7 @@
           <p>Comments under table</p>
         </div>
         <div class="box">
-          <h3>Conclusion</h3>
+          <h3>Explanation</h3>
           <p>To be done</p>
         </div>
 
@@ -229,9 +128,78 @@
         </div>
       </section>
 
-      <!-- SECTIONS 2 AND 3 TAB -->
+      <!-- SECTIONS 2 TAB-->
       <section id="section23" class="panel">
-        <div class="box"><h2>Sections 2 &amp; 3: Other drugs, and same or opposite?</h2></div>
+
+        <div class="box">
+          <h2>Section 2: Other conditions treated by drugs that act on caffeine's receptors </h2>
+        </div>
+
+        <div class="box">
+          <p>Section 1 found the caffeine’s receptors, so Section 2 transitions into which other medicines act on those same
+            receptors, and what diseases do they treat? This Wikidata query finds this. Its structure and explanation can be
+            found at the end of the section. </p>
+        </div>
+
+        <div class="box">
+          <h3>Results</h3>
+          <p>Wikidata currently lists <span id="query2-count">…</span> drug–condition pairs. These load live from Wikidata every time the page is opened.</p>
+
+          <!-- Bar chart -->
+          <canvas id="query2-chart" height="220"></canvas>
+
+          <!-- Drug cards -->
+          <div id="query2-cards" class="drug-grid">Loading data from Wikidata…</div>
+
+          <!-- Full table, folded away -->
+          <details>
+            <summary>Show the full table</summary>
+            <table>
+              <thead>
+                <tr><th>Drug</th><th>Condition treated</th></tr>
+              </thead>
+              <tbody id="query2-results">
+                <tr><td colspan="2">Loading data from Wikidata…</td></tr>
+              </tbody>
+            </table>
+          </details>
+
+          <p>Comments under table</p>
+        </div>
+
+        <div class="box">
+          <h3>Explanation</h3>
+          <p>To be done</p>
+        </div>
+
+        <div class="box">
+          <h3>The SPARQL query</h3>
+          <pre><code id="query2-code">Loading query…</code></pre>
+          <p><a id="query2-link" target="_blank">Click here to run this query on Wikidata →</a></p>
+
+        <h3>Understanding the SPARQL query</h3>
+          <!-- this section I will change later -->
+           <ul>
+            <li><code>?caffeine wdt:P662 "2519"</code> finds caffeine by its PubChem ID (2519).</li>
+            <li><code>wdt:P129</code> means "physically interacts with". It links caffeine to the proteins it binds to.</li>
+            <li><code>UNION</code> means "or": the link can be stored on caffeine's page or on the protein's page, so both are searched.</li>
+            <li>The <code>SERVICE wikibase:label</code> line turns codes such as Q3062781 into readable English names.</li>
+          </ul>
+        </div>
+
+                <div class="box">
+          <h2>Section 3: -- </h2>
+        </div>
+
+        <div class="box">
+          <p>Short specific introduction.</p>
+        </div>
+
+
+      <div class="box">
+        <p>Explanation.</p>
+        </div>
+
       </section>
 
       <!-- DISCUSSION TAB -->
@@ -271,87 +239,11 @@
 
   </div>
 
-  <!-- SCRIPT: replaces your lines 52–64, and must be last, just before </body> -->
-  <script>
-    const tabs = document.querySelectorAll('.tab');
-    const panels = document.querySelectorAll('.panel');
-
-    function showTab(id) {
-      tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === id));
-      panels.forEach(p => p.classList.toggle('active', p.id === id));
-      window.scrollTo(0, 0);
-    }
-
-    document.querySelectorAll('[data-tab]').forEach(button => {
-      button.addEventListener('click', () => showTab(button.dataset.tab));
-    });
-
-    // ---------- Live data from Wikidata ----------
-
-    // Load a query file and return its text
-    async function loadQuery(path) {
-      const response = await fetch(path);
-      if (!response.ok) {
-        throw new Error('Could not find the file ' + path + ' (status ' + response.status + ')');
-      }
-      return await response.text();
-    }
-
-    // Send a query to Wikidata and return the result rows
-    async function runQuery(query) {
-      const url = 'https://query.wikidata.org/sparql?format=json&query=' + encodeURIComponent(query);
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error('Wikidata returned an error (status ' + response.status + ')');
-      }
-      const data = await response.json();
-      return data.results.bindings;
-    }
-
-    // Query 1: show the query, make the link, fill the table
-    async function showQuery1() {
-      const query = await loadQuery('queries/query1.rq');
-
-      document.getElementById('query1-code').textContent = query;
-      document.getElementById('query1-link').href =
-        'https://query.wikidata.org/#' + encodeURIComponent(query);
-
-      const rows = await runQuery(query);
-      const table = document.getElementById('query1-results');
-      table.innerHTML = '';
-      document.getElementById('query1-count').textContent = rows.length;
-
-      rows.forEach(row => {
-        const link = row.protein.value;
-        const tr = document.createElement('tr');
-
-        const nameCell = document.createElement('td');
-        const a = document.createElement('a');
-        a.href = link;
-        a.target = '_blank';
-        a.textContent = row.proteinLabel.value;
-        nameCell.appendChild(a);
-
-        const idCell = document.createElement('td');
-        idCell.textContent = link.split('/').pop();
-
-        tr.appendChild(nameCell);
-        tr.appendChild(idCell);
-        table.appendChild(tr);
-      });
-    }
-
-    showQuery1().catch(error => {
-      console.error(error);
-      const cell = document.createElement('td');
-      cell.colSpan = 2;
-      cell.textContent = 'Could not load the data: ' + error.message;
-      const table = document.getElementById('query1-results');
-      table.innerHTML = '';
-      const tr = document.createElement('tr');
-      tr.appendChild(cell);
-      table.appendChild(tr);
-    });
-  </script>
+  <!-- SCRIPT CONNECTING -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/wikidata.js"></script>
+  <script src="js/query1.js"></script>
+  <script src="js/query2.js"></script>
 </body>
 </html>

@@ -1,0 +1,10 @@
+SELECT DISTINCT ?drug ?drugLabel ?condition ?conditionLabel WHERE {
+  ?caffeine wdt:P662 "2519" .          # caffeine (PubChem ID 2519)
+  ?caffeine wdt:P129 ?receptor .       # the receptors caffeine acts on
+  FILTER(?receptor != wd:Q24770266)    # leave out the bitter taste receptor
+  ?drug wdt:P129 ?receptor .           # other drugs that act on the same receptors
+  FILTER(?drug != ?caffeine)           # leave out caffeine itself
+  ?drug wdt:P2175 ?condition .         # the conditions those drugs treat
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+ORDER BY ?drugLabel
