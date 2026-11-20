@@ -63,7 +63,6 @@
           <ol type="1">
             <li>What receptors does caffeine target?</li>
             <li>What other drugs act on those receptors and what diseases do they treat?</li>
-            <li>Does each drug work in the same or opposite way as caffeine?</li>
           </ol>
         </div>
 
@@ -76,7 +75,6 @@
             <li>P662: "caffeine"</li>
             <li>P129: "physically interacts with"</li>
             <li>P2175: "medical condition treated"</li>
-            <li>P2868: "object has role"</li>
           </ol>
         </div>
       </section>
@@ -106,7 +104,7 @@
               <tr><td colspan="2">Loading data from Wikidata…</td></tr>
             </tbody>
           </table>
-          <p>Comments under table</p>
+
         </div>
         <div class="box">
           <h3>Explanation</h3>
@@ -143,13 +141,11 @@
 
         <div class="box">
           <h3>Results</h3>
-          <p>Wikidata currently lists <span id="query2-count">…</span> drug–condition pairs. These load live from Wikidata every time the page is opened.</p>
+          <p>Wikidata currently lists <span id="query2-count">…</span> drug condition pairs. These load live from Wikidata every time the page is opened.</p>
 
           <!-- Bar chart -->
           <canvas id="query2-chart" height="220"></canvas>
 
-          <!-- Drug cards -->
-          <div id="query2-cards" class="drug-grid">Loading data from Wikidata…</div>
 
           <!-- Full table, folded away -->
           <details>
@@ -177,28 +173,19 @@
           <pre><code id="query2-code">Loading query…</code></pre>
           <p><a id="query2-link" target="_blank">Click here to run this query on Wikidata →</a></p>
 
-        <h3>Understanding the SPARQL query</h3>
-          <!-- this section I will change later -->
+            <h3>Understanding the SPARQL query</h3>
            <ul>
-            <li><code>?caffeine wdt:P662 "2519"</code> finds caffeine by its PubChem ID (2519).</li>
-            <li><code>wdt:P129</code> means "physically interacts with". It links caffeine to the proteins it binds to.</li>
-            <li><code>UNION</code> means "or": the link can be stored on caffeine's page or on the protein's page, so both are searched.</li>
-            <li>The <code>SERVICE wikibase:label</code> line turns codes such as Q3062781 into readable English names.</li>
+            <li><code>?caffeine wdt:P662 "2519"</code> finds caffeine by its PubChem ID (2519)</li>
+            <li><code>wdt:P129</code> means "physically interacts with". These are the results from section 1.</li>
+            <li><code>FILTER(?receptor != wd:Q24770266)</code> exclusion of bitter taste receptor. Wikidata saves it as a whole family of receptors.</li>
+            <li><code>?drug wdt:P129 ?receptor</code>  same property the other way round. It finds every other drug that interacts with those same receptors.</li>
+            <li><code>FILTER(?drug != ?caffeine)</code> removes caffeine itself, so it is not included as other drug.</li>
+            <li><code>?drug wdt:P2175 ?condition</code> finds conditions each drug is used to treat as "medical condition treated" (P2175).</li>
+            <li><code>SELECT DISTINCT</code> makes sure each drug condition pair appears only once, even if a drug shares several receptors with caffeine.</li>
+            <li>The <code>SERVICE wikibase:label</code> line turns Wikidata codes into readable English names, giving <code>?drugLabel</code> and <code>?conditionLabel</code>.</li>
+            <li><code>ORDER BY ?drugLabel</code> sorts the results alphabetically by drug name.</li>
           </ul>
-        </div>
-
-                <div class="box">
-          <h2>Section 3: -- </h2>
-        </div>
-
-        <div class="box">
-          <p>Short specific introduction.</p>
-        </div>
-
-
-      <div class="box">
-        <p>Explanation.</p>
-        </div>
+          </div>
 
       </section>
 
@@ -221,11 +208,11 @@
       </button>
       <button class="tab" data-tab="section1">
         <span class="tab-title">Section 1</span>
-        <span class="tab-text">Approach 1: Which receptors does caffeine target?</span>
+        <span class="tab-text"> Which receptors does caffeine target?</span>
       </button>
       <button class="tab" data-tab="section23">
-        <span class="tab-title">Sections 2 &amp; 3</span>
-        <span class="tab-text">Approaches 2 &amp; 3: Other drugs, and same or opposite?</span>
+        <span class="tab-title">Sections 2</span>
+        <span class="tab-text"> Other drugs targetting the same receptors?</span>
       </button>
       <button class="tab" data-tab="discussion">
         <span class="tab-title">Discussion</span>
