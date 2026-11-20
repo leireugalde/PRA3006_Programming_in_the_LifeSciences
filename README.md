@@ -17,8 +17,8 @@ This repository looks into the programming of a website which integrates SPARQL 
 - `js`folder - javascript folder allowing tabs and sources
     - `query1.js` - how section 1 shows its data
     - `query2.js`- how section 2 shows its data 
-    - `tabs.js`- how tabs behave
-    - `wikidata.js`- sending query to Wikidata
+    - `tabs.js`- allows interactive tabs to work 
+    - `wikidata.js`- connects site to Wikidata
 - To be added and described in the following weeks
 
 # Methodology 
