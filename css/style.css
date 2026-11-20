@@ -1,6 +1,6 @@
 /* ===== style.css: all the styling for index.html ===== */
 
-/* coloured background: brown → orange → pink */
+/* coloured background: brown, orange, pink gradient */
 body {
   margin: 0;
   padding: 30px 16px;
@@ -61,24 +61,8 @@ a  { color: #e8743b; }
 .panel { display: none; }
 .panel.active { display: block; }
 
-/* phones: tab boxes go above the text */
-@media (max-width: 800px) {
-  .layout { grid-template-columns: 1fr; }
-  .side { position: static; order: -1; }
-}
-
-  .molecule {
-  float: right;
-  width: 200px;
-  margin: 0 0 12px 20px;
-  text-align: center;
-}
 .molecule img { width: 100%; }
 .molecule figcaption { font-size: 13px; color: #7a5a4a; }
-
-@media (max-width: 600px) {
-  .molecule { float: none; margin: 0 auto 12px; }   /* centred on phones */
-}
 
 pre {
   background: #fdf0ec;            /* very light pink */
